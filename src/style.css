@@ -1,0 +1,259 @@
+  /* border box model: https://css-tricks.com/box-sizing/ */
+  @layer base {
+    :root {
+      --black: #000501;
+      --white: #ffffff;
+      --green: #31b28a;
+      --lightgreen: #8cdfc5;
+      --red: #ff4404;
+      --tan: #b6b57b;
+      --main: "Lato", sans-serif;
+      --heading: "Josefin Sans", sans-serif;
+      --mono: "Fira Mono", monospace;
+      --base-size: 1.5rem;
+      --scale: 1.2;
+      --h1: calc(var(--h2) * var(--scale));
+      --h2: calc(var(--h3) * var(--scale));
+      --h3: calc(var(--h4) * var(--scale));
+      --h4: calc(var(--h5) * var(--scale));
+      --h5: calc(var(--h6) * var(--scale));
+      --h6: var(--base-size);
+      --small: calc(var(--base-size) / var(--scale));
+    }
+
+    body {
+      font-family: var(--main);
+      margin: 0;
+      padding: 0;
+      font-size: var(--base-size);
+      line-height: 1.5;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--heading);
+      text-transform: uppercase;
+    }
+
+    .mono {
+      font-family: var(--mono)
+    }
+
+    .lato-regular {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    .colors {
+      display: flex;
+      gap: 20px;
+    }
+
+    .colors>* {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+    }
+
+    .white {
+      background-color: var(--white);
+    }
+
+    .black {
+      background-color: var(--black);
+    }
+
+    .tan {
+      background-color: var(--tan);
+    }
+
+    .green {
+      background-color: var(--green);
+    }
+
+    .lightgreen {
+      background-color: var(--lightgreen);
+    }
+
+    .red {
+      background-color: var(--red);
+    }
+
+    h1 {
+      font-size: var(--h1);
+    }
+
+    h2 {
+      font-size: var(--h2);
+    }
+
+    h3 {
+      font-size: var(--h3);
+    }
+
+    h4 {
+      font-size: var(--h4);
+    }
+
+    h5 {
+      font-size: var(--h5);
+    }
+
+    h6 {
+      font-size: var(--h6);
+    }
+
+    a {
+      color: var(--green);
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    figure {
+      padding: 0;
+      margin: 0;
+    }
+    .button {
+      display: inline-block;
+      background-color: var(--green);
+      color: var(--black);
+      padding: 0.8rem;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--black);
+      font-weight: 600;
+      font-family: var(--headline);
+    }
+    .button:hover {
+      background-color: var(--tan);
+    }
+
+    /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  @layer intro {
+    .intro {
+      background-image: url(https://assets.codepen.io/296057/fem-comet.jpg);
+      background-repeat: no-repeat;
+      background-position: 86% 20%;
+      color: var(--white);
+      padding: 4rem 0;
+    }
+    .intro a {
+      color: var(--white);
+    }
+    .name {
+      font-weight: 700;
+      font-size: var(--h5)
+    }
+  }
+  @layer contact {
+    .section-contact {
+      background: url(https://assets.codepen.io/296057/fem-aurora.jpg) center center;
+      background-repeat: no-repeat;
+      color: var(--white);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    @layer nav {
+      header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: baseline;
+       
+      }
+      nav {
+        font-family: var(--headline);
+        font-weight: 600;
+       
+      }
+      header h1 {
+         margin: 0;
+        }
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--white);
+      }
+      nav a:hover 
+       {
+        color: var(--green);
+      }
+      header h1:hover
+       {
+        color: var(--green);
+      }
+      body {
+        background-color: black;
+      }
+      header h1 {
+        font-size: var(--h3);
+        font-weight: 300;
+        margin: 0.75rem 0 0 0;
+      }
+      header svg {
+        width: 40px;
+        fill: var(--white);
+        margin-top: -0.1rem;
+      }
+      nav .button {
+        padding: 0.6rem 0.4rem 0.4rem 0.4rem;
+        /* top right bottom left
+        trouble */
+        color: var(--black)
+      }
+      nav {
+        font-family: var(--heading);
+        font-weight: 600;
+      }
+      header a:hover svg {
+        fill: var(--green)
+      }
+      header h1 a {
+        color: var(--white);
+        text-decoration: none;
+      }
+    }
+    }
